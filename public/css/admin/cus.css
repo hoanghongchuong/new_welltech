@@ -1,0 +1,40 @@
+.select2-selection__choice, .select2-selection__choice__remove{
+    background-color: #007bff !important;
+    border: none !important;
+}
+.select2-container--default .select2-dropdown .select2-search__field:focus, .select2-container--default .select2-search--inline .select2-search__field:focus {
+    border:none !important;
+}
+.select2-container--default .select2-selection--multiple .select2-selection__choice__remove {
+    color: #fff !important;
+}
+.mt-10 {
+    margin-top: 10px;
+}
+.content {
+    padding: 15px .5rem;
+}
+.select2-container--default .select2-selection--single {
+    border: 1px solid #ced4da;
+    padding: .46875rem .75rem;
+    height: calc(2.25rem + 2px) !important;
+}
+.box-img img{
+    max-width: 70px;
+    max-height: 100px;
+    object-fit: cover;
+}
+.table-responsive .table thead {
+    background-color: #f4f6f9;
+}
+.breadcrumb {
+    background-color: unset;
+}
+.btn-delete {
+    color: red !important;
+}
+.card-header-tools {
+    position: absolute;
+    right: 1.25rem;
+    top: 6px;
+}
