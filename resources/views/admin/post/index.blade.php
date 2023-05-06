@@ -8,6 +8,12 @@
 {{--            <div class="card-tools">--}}
                 <a href="/admin/post/create?type={{$type}}" class="btn btn-primary btn-sm">Thêm mới</a>
 {{--            </div>--}}
+            @if ($message = Session::get('success'))
+                <div class="alert alert-success alert-block">
+                    <button type="button" class="close" data-dismiss="alert">×</button>
+                    <strong>{{ $message }}</strong>
+                </div>
+            @endif
         </div>
         <div class="card-body p-0">
             <div class="table-responsive">
@@ -56,9 +62,9 @@
                                 </td>
                             @endif
                             <td>{{$item->created_at}}</td>
-                            <td>
-                                <a href="/admin/post/edit/{{$item->id}}?type={{$type}}" class="mr-1"><i class="fa fa-edit"></i> Sửa</a>
-                                <a href="javascript:;" class="btn action-delete btn-delete"
+                            <td style="display: flex; align-items: center">
+                                <a href="/admin/post/edit/{{$item->id}}?type={{$type}}" class="mr-1 btn btn-primary btn-sm"><i class="fa fa-edit"></i> Sửa</a>
+                                <a href="javascript:;" class="btn action-delete btn-delete btn btn-danger btn-sm"
                                    data-url="{{route('post.delete', $item->id)}}"><i class="fa fa-trash"></i> Xóa</a>
                             </td>
                         </tr>

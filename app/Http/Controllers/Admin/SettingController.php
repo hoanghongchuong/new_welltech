@@ -60,6 +60,6 @@ class SettingController extends Controller
         }else {
             Setting::create($input);
         }
-        return back()->with('success', 'Updated successfully');
+        return back()->with('success', 'Cập nhật thành công');
     }
 }

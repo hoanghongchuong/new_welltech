@@ -29,12 +29,19 @@ class CategoryController extends Controller
     }
 
     public function store(Request $request) {
+        $request->validate([
+            'name_vi' => ['required', 'unique:categories'],
+            'name_en' => ['unique:categories', 'nullable'],
+        ],[
+            'name_vi.required' => 'Tên danh mục là bắt buộc.',
+            'name_vi.unique' => 'Tên danh mục đã tồn tại.',
+        ]);
         $input = $request->all();
         $input['slug_vi'] = isset($input['name_vi']) ? Str::slug($input['name_vi']) : '';
         $input['slug_en'] = isset($input['name_en']) ? Str::slug($input['name_en']) : '';
 
         $this->category->create($input);
-        return redirect("admin/categories?type=".$request->type)->with('success', 'Tạo mới thành công');
+        return redirect("admin/categories")->with('success', 'Tạo mới thành công');
     }
 
     public function edit($id, Request $request) {
@@ -55,7 +62,10 @@ class CategoryController extends Controller
     public function delete($id) {
         $category = $this->category->findOrFail($id);
         $category->delete();
-        return back()->with('success', 'Xóa thành công');
+        return response()->json([
+            'code' => 200,
+            'message' => 'success'
+        ], 200);
     }
 
     public function getCategory($parent_id, $type) {

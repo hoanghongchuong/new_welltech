@@ -16,12 +16,16 @@ class CreateCategoriesTable extends Migration
         Schema::create('categories', function (Blueprint $table) {
             $table->id();
             $table->integer('parent_id')->default(0);
-            $table->string('name_vi')->nullable();
-            $table->string('name_en')->nullable();
-            $table->string('slug_en')->nullable();
-            $table->string('slug_vi')->nullable();
+            $table->string('name_vi')->unique();
+            $table->string('name_en')->unique();
+            $table->string('slug_en')->unique();
+            $table->string('slug_vi')->unique();
             $table->string('type')->nullable();
             $table->string('image')->nullable();
+            $table->text('description_vi')->nullable();
+            $table->text('description_en')->nullable();
+            $table->text('content_vi')->nullable();
+            $table->text('content_en')->nullable();
             $table->timestamps();
         });
     }

@@ -65,7 +65,7 @@ class PostController extends Controller
         $input['status_vi'] = isset($input['status_vi']) ? true : false;
         $input['status_en'] = isset($input['status_en']) ? true : false;
         $this->post->create($input);
-        return redirect("admin/post?type=".$request->type)->with('success', 'Updated successfully');
+        return redirect("admin/post?type=".$request->type)->with('success', 'Thêm mới thành công');
     }
 
     public function edit($id, Request $request)
@@ -107,7 +107,7 @@ class PostController extends Controller
         if($request->has('image_vi')) {
             Storage::disk()->delete($oldImage);
         }
-        return back()->with('success', 'Updated successfully');
+        return back()->with('success', 'Cập nhật thành công');
     }
 
     public function delete($id)

@@ -6,6 +6,7 @@ use App\Http\Controllers\Admin\CategoryController;
 use App\Http\Controllers\Admin\DashboardController;
 use App\Http\Controllers\Admin\MenuController;
 use App\Http\Controllers\Admin\PostController;
+use App\Http\Controllers\Admin\ProductController;
 use App\Http\Controllers\Admin\SettingController;
 use App\Http\Controllers\Admin\UserController;
 use App\Http\Controllers\HomeController;
@@ -69,6 +70,15 @@ Route::group(['prefix' => 'admin', 'middleware' => 'auth'], function() {
         Route::get('/delete/{id}', [UserController::class, 'delete'])->name('users.delete');
 		Route::get('change/password', [UserController::class,'changePass'])->name('admin.change.pass');
         Route::post('change/password', [UserController::class,'changePassword'])->name('change.pass');
+    });
+
+    Route::prefix('products')->group(function() {
+       Route::get('/', [ProductController::class, 'index'])->name('product.index');
+       Route::get('/create', [ProductController::class, 'create'])->name('product.create');
+       Route::post('/store', [ProductController::class, 'store'])->name('product.store');
+       Route::get('/edit/{id}', [ProductController::class, 'edit'])->name('product.edit');
+       Route::post('/edit/{id}', [ProductController::class, 'update'])->name('product.update');
+       Route::get('/delete/{id}', [ProductController::class, 'delete'])->name('product.delete');
     });
 
     Route::prefix('setting')->group(function() {

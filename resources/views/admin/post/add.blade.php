@@ -1,6 +1,6 @@
 @extends('admin.layouts.admin')
 @section('title')
-    <title>Post</title>
+    <title>{{$title}}</title>
 @endsection
 @section('css')
     <link href="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/css/select2.min.css" rel="stylesheet"/>
@@ -14,7 +14,7 @@
                     <div class="card-header-stick card-header">
                         <h3 class="card-title">Thêm mới bài viết</h3>
                         <div class="card-header-tools mb-1">
-                            <button class="btn btn-primary btn-sm"><i class="fa fa-save"></i> Save</button>
+                            <button class="btn btn-primary btn-sm"><i class="fa fa-save"></i> Lưu</button>
                             <a href="{{route('post.index', ['type' => $type])}}" class="btn btn-default btn-sm"> <i class="fa fa-undo"></i> Hủy bỏ</a>
                         </div>
                     </div>

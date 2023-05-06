@@ -20,7 +20,7 @@
     height: calc(2.25rem + 2px) !important;
 }
 .box-img img{
-    max-width: 70px;
+    max-width: 120px;
     max-height: 100px;
     object-fit: cover;
 }
@@ -30,11 +30,17 @@
 .breadcrumb {
     background-color: unset;
 }
-.btn-delete {
-    color: red !important;
-}
 .card-header-tools {
     position: absolute;
     right: 1.25rem;
     top: 6px;
+}
+.error {
+    margin-top: 0.25rem;
+    font-size: 90%;
+    color: red;
+}
+.nav-tabs .nav-link.active {
+    background: #0069D9;
+    color: #fff;
 }
