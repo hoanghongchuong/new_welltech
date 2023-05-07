@@ -22,5 +22,8 @@
     "email_us" : "Email us",
     "more_detail": "More detail",
     "equipment": "Equipment",
-    "get_more_information": "Get more information"
+    "get_more_information": "Get more information",
+    "product_new": "New Product",
+    "home": "Home",
+    "news" : "News"
 }

@@ -34,7 +34,10 @@ class Product extends Model
         return $data->orderBy('id', 'desc')->paginate(LIMIT);
     }
 
-
+    public function detailProduct($id) {
+        $data = $this->with('productImages')->find($id);
+        return $data;
+    }
 
     public function productImages() {
         return $this->hasMany(ProductImage::class, 'product_id');

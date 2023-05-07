@@ -10,13 +10,20 @@ class AboutController extends Controller
 {
     public function index() {
         $lang = Session::get('website_language');
-        $title = trans('about_us');
-        $posts = Post::where('status_vi', 1)->where('type', 'about')->orderBy('id','desc')->get();
-        $posts->map(function ($post) {
-            $post->image_vi = $post->image;
-            return $post;
-        });
-        return view('frontend.pages.about', compact('posts', 'lang', 'title'));
+        $post = Post::where('status_vi', 1)->where('type', 'about')->orderBy('id','desc')->first();
+        $post->image_vi = $post->image;
+        $viewData = [
+            'title' => trans('about_us'),
+            'breadcrumbData' => [
+                0 => [
+                    'active' => 'active',
+                    'title' => trans('about_us')
+                ]
+            ],
+            'post' => $post,
+            'lang' => $lang,
+        ];
+        return view('frontend.pages.about', $viewData);
     }
 
     public function detail($slug) {

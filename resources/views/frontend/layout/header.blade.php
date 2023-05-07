@@ -8,8 +8,7 @@ $menus = \App\Models\Menu::where('parent_id', 0)->orderBy('order', 'asc')->get()
         <div class="row">
             <div class="col-md-4 col-xs-6">
                 <a href="{{url('')}}">
-                    <img src="{{$setting->logo}}" alt="" class="img-logo">
-                    {{--                        RasVN--}}
+                    <img src="{{$setting->logo}}" alt="Welltech" class="img-logo">
                 </a>
             </div>
             <div class="col-md-8 col-xs-6">
@@ -26,7 +25,7 @@ $menus = \App\Models\Menu::where('parent_id', 0)->orderBy('order', 'asc')->get()
 				<p class="text-right">
                     <a href="/change-language/vi"><img src="{{asset('frontend/images/vn.png')}}" width="25px" alt=""></a>
                     <a href="/change-language/en"><img src="{{asset('frontend/images/en.png')}}" width="25px" alt=""></a>
-                    <a href="/change-language/es"><img src="{{asset('frontend/images/es.png')}}" width="25px" alt=""></a>
+{{--                    <a href="/change-language/es"><img src="{{asset('frontend/images/es.png')}}" width="25px" alt=""></a>--}}
                 </p>
             </div>
         </div>
@@ -41,7 +40,7 @@ $menus = \App\Models\Menu::where('parent_id', 0)->orderBy('order', 'asc')->get()
                         <div class="vk-header__bot-content">
                             <div class="vk-header__menu">
                                 <ul class="vk-menu__main">
-                                    <li><a href="{{ url('') }}"><i class="_icon fa fa-home"></i></a></li>
+                                    <li><a href="{{ url('') }}">Trang chủ</a></li>
                                     @foreach($menus as $menu)
                                         <?php
                                         $subMenu = \App\Models\Menu::where('parent_id', $menu->id)->get();
@@ -56,7 +55,6 @@ $menus = \App\Models\Menu::where('parent_id', 0)->orderBy('order', 'asc')->get()
                                                 </ul>
                                             @endif
                                         </li>
-
                                     @endforeach
                                 </ul>
                             </div>

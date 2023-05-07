@@ -20,8 +20,8 @@
     height: calc(2.25rem + 2px) !important;
 }
 .box-img img{
-    max-width: 120px;
-    max-height: 100px;
+    width: 120px;
+    height: 100px;
     object-fit: cover;
 }
 .table-responsive .table thead {
@@ -43,4 +43,19 @@
 .nav-tabs .nav-link.active {
     background: #0069D9;
     color: #fff;
+}
+.box-img-detail {
+    display: flex;
+}
+.box-img {
+    position: relative;
+}
+.delete-img {
+    position: absolute;
+    right: 0px;
+    top: -15px;
+    color: red;
+    font-weight: bold;
+    cursor: pointer;
+    font-size: 20px;
 }

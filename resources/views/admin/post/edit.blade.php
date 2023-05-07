@@ -67,7 +67,6 @@
                                                 <input type="file" name="icon_home">
                                             </div>
                                         @endif
-                                        @if($type != 'about')
                                             <div class="form-group">
                                                 <div class="box-img mb-3">
                                                     <img src="{{asset($post->image_vi)}}" alt="">
@@ -75,7 +74,6 @@
                                                 <label>Chọn ảnh</label>
                                                 <input type="file" name="image_vi">
                                             </div>
-                                        @endif
                                         <div class="form-group">
                                             <label for="">Tên bài viết</label>
                                             <input type="text" placeholder="" class="form-control" value="{{$post->name_vi}}" name="name_vi">

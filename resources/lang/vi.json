@@ -12,7 +12,7 @@
     "content_required": "Content is required",
     "phone_invalid": "Số điện thoại không chính xác",
     "service": "Dịch vụ",
-    "about_us": "Về chúng tôi",
+    "about_us": "Giới thiệu",
     "des_contact": "Hãy liên hệ với chúng tôi",
     "get_in_touch": "Liên lạc",
     "our_expertise": "Chúng tôi có thể hỗ trợ đầy đủ các dịch vụ nuôi thủy sản",
@@ -22,5 +22,8 @@
     "email_us" : "Email của chúng tôi",
     "more_detail": "Chi tiết",
     "equipment": "Trang thiết bị",
-    "get_more_information": "Xem thêm thông tin"
+    "get_more_information": "Xem thêm thông tin",
+    "product_new": "Sản phẩm mới",
+    "home": "Trang chủ",
+    "news" : "Tin tức"
 }

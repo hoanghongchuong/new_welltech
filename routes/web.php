@@ -10,6 +10,7 @@ use App\Http\Controllers\Admin\ProductController;
 use App\Http\Controllers\Admin\SettingController;
 use App\Http\Controllers\Admin\UserController;
 use App\Http\Controllers\HomeController;
+use App\Http\Controllers\NewController;
 use App\Http\Controllers\ServiceController;
 use Illuminate\Support\Facades\Route;
 
@@ -79,6 +80,7 @@ Route::group(['prefix' => 'admin', 'middleware' => 'auth'], function() {
        Route::get('/edit/{id}', [ProductController::class, 'edit'])->name('product.edit');
        Route::post('/edit/{id}', [ProductController::class, 'update'])->name('product.update');
        Route::get('/delete/{id}', [ProductController::class, 'delete'])->name('product.delete');
+       Route::get('/delete/image/detail/{id}', [ProductController::class, 'deleteProductImage'])->name('product.image.delete');
     });
 
     Route::prefix('setting')->group(function() {
@@ -107,10 +109,8 @@ Route::group([/**'prefix' => Session::get('website_language') ,*/ 'middleware' =
     Route::get('/dich-vu/{id}.html', [ServiceController::class, 'detail']);
     Route::get('/gioi-thieu', [AboutController::class, 'index']);
     Route::get('/gioi-thieu/{id}.html', [AboutController::class, 'detail']);
-    Route::get('/trang-thiet-bi', [HomeController::class, 'equipment']);
-    Route::get('/trang-thiet-bi/{id}.html', [HomeController::class, 'equipmentDetail']);
-    Route::get('/bai-viet/{id}.html', [HomeController::class, 'postDetail']);
-    Route::get('/cong-nghe', [HomeController::class, 'technology']);
+    Route::get('/tin-tuc', [NewController::class, 'news']);
+    Route::get('/tin-tuc/{id}.html', [NewController::class, 'detail']);
 
     Route::get('/lien-he', [\App\Http\Controllers\ContactController::class, 'index']);
     Route::post('send-contact', [\App\Http\Controllers\ContactController::class, 'sendContact'])->name('send.contact');

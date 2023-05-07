@@ -19,7 +19,7 @@ class CreateProductsTable extends Migration
             $table->double('price')->nullable();
             $table->string('name_vi')->unique();
             $table->string('name_en')->nullable()->unique();
-            $table->string('slug_en')->nullable()->unique();
+            $table->string('slug_en')->nullable();
             $table->string('slug_vi')->unique();
             $table->text('image')->nullable();
             $table->longText('description_vi')->nullable();

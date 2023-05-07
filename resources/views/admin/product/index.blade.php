@@ -4,9 +4,29 @@
 @endsection
 @section('content')
     <div class="card card-listview card-primary card-outline">
+        <div class="col-md-12">
+            <div class="card-header-stick card-header">
+                <div class="col-md-4">
+                    <form action="{{route('product.index')}}" method="get">
+                        @csrf
+                        <div class="input-group mb-3">
+                            <input type="text" class="form-control" name="key_search" placeholder="Tên sản phẩm"
+                                   aria-label="Tên sản phẩm" aria-describedby="button-addon2">
+                            <div class="input-group-append">
+                                <button class="btn btn-primary btn-sm" type="button" id="button-addon2">Tìm kiếm
+                                </button>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+                <div class="card-header-tools mb-1">
+                    <a href="{{route('product.create')}}" class="btn btn-primary btn-sm">Thêm mới</a>
+                </div>
+            </div>
+        </div>
         <div class="card-header border-transparent">
             {{--            <div class="card-tools">--}}
-            <a href="{{route('product.create')}}" class="btn btn-primary btn-sm">Thêm mới</a>
+            {{--            <a href="{{route('product.create')}}" class="btn btn-primary btn-sm">Thêm mới</a>--}}
             {{--            </div>--}}
             @if ($message = Session::get('success'))
                 <div class="alert alert-success alert-block">
@@ -24,7 +44,7 @@
                         <th>Danh mục</th>
                         <th scope="col">Tên tiếng việt</th>
                         <th scope="col">Tên tiếng anh</th>
-                            <th scope="col">Ảnh</th>
+                        <th scope="col">Ảnh</th>
                         <th scope="col">Ngày tạo</th>
                         <th>Actions</th>
                     </tr>
@@ -41,14 +61,15 @@
 
                             </td>
                             <td>{{$item->name_en}}</td>
-                                <td>
-                                    <div class="box-img">
-                                        <img src="{{asset($item->image)}}" alt="">
-                                    </div>
-                                </td>
+                            <td>
+                                <div class="box-img">
+                                    <img src="{{asset($item->image)}}" alt="">
+                                </div>
+                            </td>
                             <td>{{$item->created_at}}</td>
                             <td style="display: flex; align-items: center">
-                                <a href="{{route('product.edit', $item->id)}}" class="mr-1 btn btn-primary btn-sm"><i class="fa fa-edit"></i> Sửa</a>
+                                <a href="{{route('product.edit', $item->id)}}" class="mr-1 btn btn-primary btn-sm"><i
+                                        class="fa fa-edit"></i> Sửa</a>
                                 <a href="javascript:;" class="btn action-delete btn-delete btn btn-danger btn-sm"
                                    data-url="{{route('product.delete', $item->id)}}"><i class="fa fa-trash"></i> Xóa</a>
                             </td>

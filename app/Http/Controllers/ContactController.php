@@ -16,8 +16,18 @@ class ContactController extends Controller
         $setting = Setting::first()->toArray();
         $lang = Session::get('website_language');
 
-        $title = trans('title_contact');
-        return view('frontend.pages.contact', compact('setting', 'title', 'lang'));
+        $viewData = [
+            'title' => trans('title_contact'),
+            'breadcrumbData' => [
+                0 => [
+                    'active' => 'active',
+                    'title' => trans('title_contact')
+                ]
+            ],
+            'lang' => $lang,
+            'setting' => $setting,
+        ];
+        return view('frontend.pages.contact', $viewData);
     }
 
     public function sendContact(ContactRequest $request) {

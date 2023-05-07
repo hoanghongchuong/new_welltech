@@ -22,6 +22,10 @@ body{
     font-family: "Barlow";
     font-size: 14px;
 }
+:root {
+    --main-color: #4EA39B;
+    --text-color: #EDB143;
+}
 a:hover {
     text-decoration: none !important;
 }
@@ -98,7 +102,7 @@ a:hover {
     left: 0;
     z-index: 1030;
 }
-.vk-header__bot { background-color: #0d4e96; color: #fff; position: -webkit-sticky; position: sticky; top: 0px; z-index: 11; }
+.vk-header__bot { background-color: var(--main-color); color: #fff; position: -webkit-sticky; position: sticky; top: 0px; z-index: 11; }
 @media (min-width: 992px) {
     .vk-header__bot-content {
         display: -webkit-box;
@@ -138,11 +142,11 @@ a:hover {
 
 .vk-menu__main > li.active a { background-color: #0d4e96; color: #fff; }
 
-.vk-menu__main > li:hover > a { background-color: #0d4e96; color: #fff; border-color: #fd2d1c; }
+.vk-menu__main > li:hover > a { background-color: var(--main-color); color: #fff; border-color: var(--text-color); }
 
 .vk-menu__main > li:hover > .vk-menu__child { visibility: visible; opacity: 1; }
 
-.vk-menu__child { position: absolute;padding-left: 5px; padding-right: 3px; /*padding: 5px 20px;*/ z-index: 10000000; background: #0D4E96; /*background-color: rgba(13, 78, 150, 0.5);*/ min-width: 200px; visibility: hidden; opacity: 0; -webkit-transition: all 0.3s ease-in-out; -moz-transition: all 0.3s ease-in-out; -o-transition: all 0.3s ease-in-out; transition: all 0.3s ease-in-out; }
+.vk-menu__child { position: absolute;padding-left: 5px; padding-right: 3px; /*padding: 5px 20px;*/ z-index: 10000000; background: var(--main-color); /*background-color: rgba(13, 78, 150, 0.5);*/ min-width: 200px; visibility: hidden; opacity: 0; -webkit-transition: all 0.3s ease-in-out; -moz-transition: all 0.3s ease-in-out; -o-transition: all 0.3s ease-in-out; transition: all 0.3s ease-in-out; }
 
 .vk-menu__child li { position: relative; border-top: 1px solid rgba(255, 255, 255, 0.3); }
 
@@ -151,7 +155,7 @@ a:hover {
 .vk-menu__child li a { display: block; padding: 10px 0px; color: #fff;
     font-size: 14px !important;}
 
-.vk-menu__child li a:hover, .vk-menu__child li a:focus { color: #fd2d1c; }
+.vk-menu__child li a:hover, .vk-menu__child li a:focus { color: var(--text-color); }
 
 .vk-menu__child li > ul { top: 0; left: 100%; }
 
@@ -169,7 +173,7 @@ a:hover {
 .header-top {
     box-sizing: border-box;
     align-items: center;
-    background: #0d4e96;
+    background: var(--main-color);
     border-color: rgba(0,0,0,0);
     font-size: 16px;
     font-weight: 400;
@@ -341,7 +345,7 @@ ul.gt {
     opacity: 1;
 }
 .tatsu-section-overlay {
-    background: rgba(0,63,106,0.7);
+    background: var(--main-color);;
     mix-blend-mode: normal;
     position: absolute;
     top: 0;
@@ -404,14 +408,15 @@ svg:not(:root) {
 .ras-technology h2 {
     font-family: Josefin;
     font-size: 36px;
+    text-transform: uppercase;
     line-height: 40px;
     font-weight: 600;
-    color: #000000;
+    color: var(--main-color);
 }
 .ras-technology .des {
     font-family: Barlow;
     font-size: 16px;
-    color: #72767d;
+    color: #211e1f;
     font-weight: 400;
     line-height: 22px;
 }
@@ -423,7 +428,7 @@ svg:not(:root) {
     object-fit: cover;
 }
 .read-more {
-    background-color: rgba(34,147,215,1);
+    background-color: var(--main-color);
     color: #ffffff;
     text-transform: uppercase;
     padding: 14px 34px;
@@ -467,7 +472,7 @@ svg:not(:root) {
     text-transform: uppercase;
     letter-spacing: -0.03em;
     line-height: 40px;
-    color: rgba(0,0,0,1);
+    color: var(--main-color);
 }
 .equipment .des{
     font-family: Barlow;
@@ -475,9 +480,9 @@ svg:not(:root) {
     color: #72767d;
 }
 .slider-equipment .item p{
-    font-family: Barlow;
-    font-size: 22px;
-    color: #000;
+    font-family: Josefin;
+    font-size: 18px;
+    color: var(--main-color);
     text-transform: uppercase;
     margin-top: 15px;
 }
@@ -511,8 +516,8 @@ svg:not(:root) {
     font-family: Josefin;
     font-weight: 600;
     font-style: normal;
-    font-size: 24px;
-    color: rgba(49,50,51,1);
+    font-size: 18px;
+    color: var(--main-color);
     margin-top: 15px;
     text-align: center;
 }
@@ -520,7 +525,7 @@ svg:not(:root) {
     color: #337ab7;
 }
 .tatsu-top-divider {
-    color: #f5f6fa;
+    color: var(--main-color);
     height: 100px;
     position: relative;
     overflow: hidden;
@@ -566,18 +571,21 @@ svg:not(:root) {
 .footer {
     margin-top: 50px;
     font-family: Josefin;
+    background-color: var(--text-color);
+    color: #fff;
+    padding-top: 20px;
 }
 .footer h6 {
     font-size: 20px;
     line-height: 26px;
-    color: #0D4E96;
+    /*color: var(--main-color);*/
     font-weight: 600;
 }
 .footer .des {
-    font-size: 15px;
+    font-size: 16px;
     font-weight: 400;
     line-height: 22px;
-    color: #72767d;
+    color: #000;
 }
 .menu-mobile {
     color: #fff;
@@ -712,14 +720,17 @@ svg:not(:root) {
 }
 .name-equipment {
     font-family: Josefin;
-    font-size: 22px;
+    font-size: 18px;
     font-weight: bold;
-    color: #2293d7;
+    color: var(--main-color);
     margin-top: 10px;
+}
+.name-equipment a {
+    color: var(--main-color);
 }
 .contact-content h2{
     font-size: 36px;
-    color: #0D4E96;
+    color: var(--main-color);
     font-family: Josefin;
     line-height: 40px;
     font-weight: 600;
@@ -895,7 +906,9 @@ svg:not(:root) {
     /*font-weight: 600;*/
     /*background-color: #0D4E96;*/
     padding: 10px 30px;
-    background: #0D4E96;
+    background: var(--main-color);
+    font-weight: bold;
+    border-color: var(--main-color);
     color: #fff;
     font-size: 17px;
     border-radius: 0;
@@ -910,12 +923,29 @@ svg:not(:root) {
     font-weight: bold;
     font-size: 16px;
     font-family: Josefin;
-    color: #0D4E96;
+    color: var(--main-color);
 }
 .contact-bg .tatsu-section-background {
     background-image: url(https://www.bloom-aqua.com/wp-content/uploads/2020/01/jet-kim-_w-VVA8PrC0-unsplash.jpg);
 }
 .img-logo {
-    width: 50%;
+    width: 65%;
     /*height: 42px;*/
+}
+.address a {
+    color: var(--main-color);
+}
+.breadcrumb {
+    background-color: unset;
+    margin-bottom: 0;
+    padding-left: 0;
+}
+.breadcrumb>.active {
+    color: var(--main-color);
+}
+.about-content p{
+    font-size: 16px;
+}
+.banner img {
+    width: 100%;
 }
