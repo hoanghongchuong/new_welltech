@@ -14,7 +14,7 @@
                     <h3 class="card-title">Thêm mới sản phẩm</h3>
                     <div class="card-header-tools mb-1">
                         <button class="btn btn-primary btn-sm"><i class="fa fa-save"></i> Lưu</button>
-                        <a href="{{route('product.index')}}" class="btn btn-default btn-sm"> <i class="fa fa-undo"></i>
+                        <a href="{{route('admin.product.index')}}" class="btn btn-default btn-sm"> <i class="fa fa-undo"></i>
                             Hủy bỏ</a>
                     </div>
                 </div>
@@ -78,7 +78,7 @@
                                     </div>
                                     <div class="form-group">
                                         <label for="">Mô tả</label>
-                                        <textarea type="text" placeholder="" class="form-control"
+                                        <textarea type="text" placeholder="" class="form-control tinymce-editor-init"
                                                   name="description_vi"></textarea>
                                     </div>
                                 </div>
@@ -112,7 +112,7 @@
                                     </div>
                                     <div class="form-group">
                                         <label for="">Mô tả</label>
-                                        <input type="text" placeholder="" class="form-control" name="description_en">
+                                        <input type="text" placeholder="" class="form-control tinymce-editor-init" name="description_en">
                                     </div>
 
                                     {{--                                    <div class="form-group">--}}

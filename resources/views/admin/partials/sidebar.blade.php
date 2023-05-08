@@ -56,7 +56,7 @@
                     </a>
                 </li>
                 <li class="nav-item">
-                    <a href="{{route('product.index')}}" class="nav-link">
+                    <a href="{{route('admin.product.index')}}" class="nav-link">
                         <i class="fas fa-list nav-icon"></i>
                         <p>Danh sách sản phẩm</p>
                     </a>

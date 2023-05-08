@@ -7,7 +7,7 @@
         <div class="col-md-12">
             <div class="card-header-stick card-header">
                 <div class="col-md-4">
-                    <form action="{{route('product.index')}}" method="get">
+                    <form action="{{route('admin.product.index')}}" method="get">
                         @csrf
                         <div class="input-group mb-3">
                             <input type="text" class="form-control" name="key_search" placeholder="Tên sản phẩm"
@@ -53,7 +53,7 @@
                     @foreach($products as $item)
                         <tr>
                             <th scope="row">{{$item->id}}</th>
-                            <td>'sdf</td>
+                            <td>{{$item->category->name_vi}}</td>
                             <td>
                                 {{$item->name_vi}} <br>
                                 <a href=" {{url('san-pham/'.$item->slug_vi.'.html')}}"

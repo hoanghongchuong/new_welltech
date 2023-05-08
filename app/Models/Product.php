@@ -26,20 +26,27 @@ class Product extends Model
         'status'
     ];
 
-    public function getProductPaginate($keySearch = '') {
-        $query = $this->query();
+    public function getProductPaginate($keySearch = '', $category = '') {
+        $query = $this->query()->with(['category']);
         $data = $query->when(!empty($keySearch), function ($q) use ($keySearch) {
             return $q->where('name_vi', 'LIKE', '%' . $keySearch . '%');
+        })->when(!empty($category), function($q) use ($category) {
+            return $q->where('category_id', $category);
         });
         return $data->orderBy('id', 'desc')->paginate(LIMIT);
     }
 
     public function detailProduct($id) {
-        $data = $this->with('productImages')->find($id);
+        $data = $this->with(['productImages'])->find($id);
         return $data;
     }
 
+
     public function productImages() {
         return $this->hasMany(ProductImage::class, 'product_id');
+    }
+
+    public function category() {
+        return $this->hasOne(Category::class, 'id', 'category_id');
     }
 }

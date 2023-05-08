@@ -7,6 +7,7 @@ use App\Http\Controllers\Admin\DashboardController;
 use App\Http\Controllers\Admin\MenuController;
 use App\Http\Controllers\Admin\PostController;
 use App\Http\Controllers\Admin\ProductController;
+use App\Http\Controllers\ProductController as FrontendProductController;
 use App\Http\Controllers\Admin\SettingController;
 use App\Http\Controllers\Admin\UserController;
 use App\Http\Controllers\HomeController;
@@ -74,7 +75,7 @@ Route::group(['prefix' => 'admin', 'middleware' => 'auth'], function() {
     });
 
     Route::prefix('products')->group(function() {
-       Route::get('/', [ProductController::class, 'index'])->name('product.index');
+       Route::get('/', [ProductController::class, 'index'])->name('admin.product.index');
        Route::get('/create', [ProductController::class, 'create'])->name('product.create');
        Route::post('/store', [ProductController::class, 'store'])->name('product.store');
        Route::get('/edit/{id}', [ProductController::class, 'edit'])->name('product.edit');
@@ -104,15 +105,18 @@ Route::prefix('admin')->group(function () {
 Route::group([/**'prefix' => Session::get('website_language') ,*/ 'middleware' => 'locale'], function() {
     Route::get('change-language/{language}', [HomeController::class, 'changeLanguage'])
         ->name('user.change-language');
-    Route::get('/', [HomeController::class, 'index']);
+    Route::get('/', [HomeController::class, 'index'])->name('home.index');
     Route::get('/dich-vu', [ServiceController::class, 'index']);
     Route::get('/dich-vu/{id}.html', [ServiceController::class, 'detail']);
-    Route::get('/gioi-thieu', [AboutController::class, 'index']);
+    Route::get('/gioi-thieu', [AboutController::class, 'index'])->name('about.index');
     Route::get('/gioi-thieu/{id}.html', [AboutController::class, 'detail']);
-    Route::get('/tin-tuc', [NewController::class, 'news']);
+    Route::get('/tin-tuc', [NewController::class, 'news'])->name('news.index');
     Route::get('/tin-tuc/{id}.html', [NewController::class, 'detail']);
 
-    Route::get('/lien-he', [\App\Http\Controllers\ContactController::class, 'index']);
+    Route::get('/san-pham', [FrontendProductController::class, 'index'])->name('product.index');
+    Route::get('/san-pham/{id}.html', [FrontendProductController::class, 'detail'])->name('product.detail');
+
+    Route::get('/lien-he', [\App\Http\Controllers\ContactController::class, 'index'])->name('contact.index');
     Route::post('send-contact', [\App\Http\Controllers\ContactController::class, 'sendContact'])->name('send.contact');
 });
 Route::get('storage/link', function () {

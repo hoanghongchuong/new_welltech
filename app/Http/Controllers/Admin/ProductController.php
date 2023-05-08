@@ -97,7 +97,7 @@ class ProductController extends Controller
             ProductImage::create(['product_id' => $newProduct->id, 'alias' => $image['alias']]);
         }
 
-        return redirect()->route('product.index')->with('success', 'Thêm thành công');
+        return redirect()->route('admin.product.index')->with('success', 'Thêm thành công');
     }
 
     public function edit(Request $request, $id)
@@ -156,7 +156,7 @@ class ProductController extends Controller
         }
 
 
-        return redirect()->route('product.index')->with('success', 'Thêm thành công');
+        return redirect()->route('admin.product.index')->with('success', 'Thêm thành công');
     }
 
     public function delete($id)

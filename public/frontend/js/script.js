@@ -1,5 +1,5 @@
 $(document).ready(function($){
-	$('.owl-carousel').owlCarousel({
+	$('.owl-carousel-product-home').owlCarousel({
 		loop:false,
 		margin:10,
 		nav: false,
@@ -13,7 +13,7 @@ $(document).ready(function($){
 				items:3
 			},
 			1000:{
-				items:3
+				items:4
 			}
 		}
 	})

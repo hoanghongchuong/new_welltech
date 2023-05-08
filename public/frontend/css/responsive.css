@@ -45,7 +45,9 @@
     }
 }
 @media (min-width: 768px) {
-
+.box-right {
+    padding-left: 0;
+}
 }
 @media (min-width: 768px) and (max-width: 999px){
 	.menu{

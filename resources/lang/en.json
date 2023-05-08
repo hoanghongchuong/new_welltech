@@ -25,5 +25,8 @@
     "get_more_information": "Get more information",
     "product_new": "New Product",
     "home": "Home",
-    "news" : "News"
+    "news" : "News",
+    "product_list": "Product list",
+    "product": "Product",
+    "detail_product": "Product Detail"
 }
